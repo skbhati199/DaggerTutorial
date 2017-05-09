@@ -144,3 +144,39 @@ public class GithubApplication extends Application {
         ...
 ```
 > __NOTE__: the reason those modules are commented is because it's *unncessary*. That is, Dagger will automatically construct those modules in the builder.  `ContextModule` however requires context as a constructor argument and therefore must be included in the builder.  
+
+## mod02 branch
+### Flaws from mod01 branch
+- Each time application calls `getGithubService` or `getPicasso`, it returns a new instance of `GithubService` and `Picasso`.   
+- Purpose of sharing instance will fail. For instance, one instance of `GithubService` will depend on one instance of `Retrofit`.  If the above is true, we must create instances at multiple places. 
+- `@Scope` annotation takes place to solve this problem
+
+### `GithubApplicationScope`
+It's pretty easy to create a scope.
+```java
+@Scope
+@Retention(RetentionPolicy.CLASS)
+public @interface GithubApplicationScope {
+}
+```
+Then apply the annotation on an application component and all the depended modules.
+- `GithubApplicationComponent`
+- `GithubServiceModule`
+- `NetworkModule`
+- `PicassoModule` 
+- `ContextModule`
+  
+> __NOTE__: The reason TwistedEquation urged not to use `@Singleton` is that it is ONLY a singleton within an instance you create. For instance, on `onCreate()`method at `GithubApplication`
+```java
+GithubApplicationComponent component = DaggerGithubApplicationComponent.builder()
+        .contextModule(new Contextmodule(this))
+        ....
+```
+one instance of component is created.  Then singleton object only works as a singleton in THIS instance.  That is, if you made another duplicate component instance(s), `@Singleton` doesn't do what it's supposed to do and create another instance anyway.
+
+ 
+
+
+
+
+
