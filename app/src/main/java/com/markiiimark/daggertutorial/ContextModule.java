@@ -15,7 +15,7 @@ public class ContextModule {
     private final Context context;
     public ContextModule(Context context) {  this.context = context;  }
 
-    @Provides
+    @Provides @GithubApplicationScope
     public Context provideContext() {
         return context;
     }

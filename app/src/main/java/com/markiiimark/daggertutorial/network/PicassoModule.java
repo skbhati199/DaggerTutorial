@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.jakewharton.picasso.OkHttp3Downloader;
 import com.markiiimark.daggertutorial.ContextModule;
+import com.markiiimark.daggertutorial.GithubApplicationScope;
 import com.squareup.picasso.Picasso;
 
 import dagger.Module;
@@ -17,14 +18,14 @@ import okhttp3.OkHttpClient;
 @Module(includes = {ContextModule.class, NetworkModule.class})
 public class PicassoModule {
 
-    @Provides
+    @Provides @GithubApplicationScope
     public Picasso providePicasso(Context context, OkHttp3Downloader okHttp3Downloader) {
         return new Picasso.Builder(context)
                 .downloader(okHttp3Downloader)
                 .build();
     }
 
-    @Provides
+    @Provides @GithubApplicationScope
     public OkHttp3Downloader provideOkHttp3Downloader(OkHttpClient okHttpClient) {
         return new OkHttp3Downloader(okHttpClient);
     }

@@ -11,12 +11,9 @@ import dagger.Component;
  * Created by MarkiiimarK on 5/9/17.
  */
 
+@GithubApplicationScope
 @Component(modules = {GithubServiceModule.class, PicassoModule.class})
 public interface GithubApplicationComponent {
-    // GithubServiceModule contains NetworkModule
-    // NetworkModule contains ContextModule
-    // SO we won't have to list all modules in the annotation.
-
     Picasso getPicasso();
     GithubService getGithubService();
 }
