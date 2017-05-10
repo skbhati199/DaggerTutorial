@@ -2,10 +2,13 @@ package com.markiiimark.daggertutorial.network;
 
 import android.content.Context;
 
+import com.markiiimark.daggertutorial.ApplicationContext;
 import com.markiiimark.daggertutorial.ContextModule;
 import com.markiiimark.daggertutorial.GithubApplicationScope;
 
 import java.io.File;
+
+import javax.inject.Named;
 
 import dagger.Module;
 import dagger.Provides;
@@ -38,7 +41,7 @@ public class NetworkModule {
 
 
     @Provides @GithubApplicationScope
-    public File provideCacheFile(Context context) {
+    public File provideCacheFile(@ApplicationContext Context context) {
         return new File(context.getCacheDir(), "okHttp_cache");
     }
 
