@@ -215,14 +215,20 @@ public @interface ApplicationContext {
 }
 ```
 To see where it's used.  Take a look at `NetworkModule`'s `provideCacheFile` method.
-```javav
+```java
     ...
     public File provideCacheFile(@ApplicationContext Context context) {
         return new File(context.getCacheDir(), "okHttp_cache");
     }
     ...
 ```
-   
+Do not forget `ActivityModule` needs to be added into `GithubApplicationComponent`
+```java
+...
+@Component(modules = {GithubServiceModule.class, PicassoModule.class, ActivityModule.class})
+public interface GithubApplicationComponent {
+...
+```
   
 
 

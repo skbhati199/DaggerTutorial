@@ -2,6 +2,8 @@ package com.markiiimark.daggertutorial;
 
 import android.content.Context;
 
+import javax.inject.Named;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -16,6 +18,7 @@ public class ContextModule {
     public ContextModule(Context context) {  this.context = context;  }
 
     @Provides @GithubApplicationScope
+    @ApplicationContext // @Named("APPLICATION_CONTEXT")
     public Context provideContext() {
         return context;
     }
