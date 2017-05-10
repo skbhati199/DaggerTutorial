@@ -174,7 +174,56 @@ GithubApplicationComponent component = DaggerGithubApplicationComponent.builder(
 ```
 one instance of component is created.  Then singleton object only works as a singleton in THIS instance.  That is, if you made another duplicate component instance(s), `@Singleton` doesn't do what it's supposed to do and create another instance anyway.
 
- 
+### Adding Qaulifiers to differentiate dependency
+Suppose we need to use network module on Application layer and Activity layer and they must not overlap its dependency (*e.g.* retrofit).  
+ - So we use `@Named()` qualifier to differentiate dependency.
+ - Just like how we customized our own `@Scope`, we can do it for qualifer as well.
+
+### `ContextModule` and `ActivityModule`
+`ActivityModule` is added just for the sake of the example.  `ActivityModule` wants to use its own `NetworkModule` that doesn't depend on Application's `NetworkModule`
+```java
+@Module
+public class ActivityModule {
+    
+    private final Activity context;
+    public ActivityModule(Activity context) {  this.context = context;  }
+    
+    @Provides @GithubApplicationScope
+    @Named("ACTIVITY_CONTEXT")
+    public Context context() {  return context;  }
+}   
+```
+We must do likewise for `ContextModule`
+```java
+@Module
+public class ContextModule {
+
+    private final Context context;
+    public ContextModule(Context context) {  this.context = context;  }
+
+    @Provides @GithubApplicationScope
+    @ApplicationContext // @Named("APPLICATION_CONTEXT")
+    public Context provideContext() {
+        return context;
+    }
+}
+```
+`ApplicatonContext` is created to provide qualifier annotation.
+```java
+@Qualifier
+public @interface ApplicationContext {
+}
+```
+To see where it's used.  Take a look at `NetworkModule`'s `provideCacheFile` method.
+```javav
+    ...
+    public File provideCacheFile(@ApplicationContext Context context) {
+        return new File(context.getCacheDir(), "okHttp_cache");
+    }
+    ...
+```
+   
+  
 
 
 
