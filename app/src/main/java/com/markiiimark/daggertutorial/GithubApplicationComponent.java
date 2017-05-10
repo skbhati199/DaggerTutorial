@@ -3,6 +3,7 @@ package com.markiiimark.daggertutorial;
 import com.markiiimark.daggertutorial.network.GithubService;
 import com.markiiimark.daggertutorial.network.GithubServiceModule;
 import com.markiiimark.daggertutorial.network.PicassoModule;
+import com.markiiimark.daggertutorial.screens.ActivityModule;
 import com.squareup.picasso.Picasso;
 
 import dagger.Component;
@@ -12,7 +13,7 @@ import dagger.Component;
  */
 
 @GithubApplicationScope
-@Component(modules = {GithubServiceModule.class, PicassoModule.class})
+@Component(modules = {GithubServiceModule.class, PicassoModule.class, ActivityModule.class})
 public interface GithubApplicationComponent {
     Picasso getPicasso();
     GithubService getGithubService();
