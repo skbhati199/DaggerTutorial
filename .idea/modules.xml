@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/Daggar2Tutorial.iml" filepath="$PROJECT_DIR$/Daggar2Tutorial.iml" />
-=======
-      <module fileurl="file://$PROJECT_DIR$/DaggerTutorial.iml" filepath="$PROJECT_DIR$/DaggerTutorial.iml" />
->>>>>>> 841d660a8b9e9fdf88e1c03e7a080df0f12a8117
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

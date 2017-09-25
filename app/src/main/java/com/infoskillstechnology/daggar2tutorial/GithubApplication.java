@@ -1,4 +1,4 @@
-package com.markiiimark.daggertutorial;
+package com.infoskillstechnology.daggar2tutorial;
 
 import android.app.Activity;
 import android.app.Application;
@@ -6,8 +6,8 @@ import android.app.Application;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.jakewharton.picasso.OkHttp3Downloader;
-import com.markiiimark.daggertutorial.network.DateTimeConverter;
-import com.markiiimark.daggertutorial.network.GithubService;
+import com.infoskillstechnology.daggar2tutorial.network.DateTimeConverter;
+import com.infoskillstechnology.daggar2tutorial.network.GithubService;
 import com.squareup.picasso.OkHttpDownloader;
 import com.squareup.picasso.Picasso;
 

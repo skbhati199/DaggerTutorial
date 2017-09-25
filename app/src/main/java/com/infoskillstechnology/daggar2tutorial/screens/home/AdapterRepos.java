@@ -1,12 +1,12 @@
-package com.markiiimark.daggertutorial.screens.home;
+package com.infoskillstechnology.daggar2tutorial.screens.home;
 
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 
-import com.markiiimark.daggertutorial.models.GithubRepo;
-import com.markiiimark.daggertutorial.screens.HomeActivity;
+import com.infoskillstechnology.daggar2tutorial.models.GithubRepo;
+import com.infoskillstechnology.daggar2tutorial.screens.HomeActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;

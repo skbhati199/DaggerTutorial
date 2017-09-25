@@ -1,10 +1,10 @@
-package com.markiiimark.daggertutorial.network;
+package com.infoskillstechnology.daggar2tutorial.network;
 
 /**
  * Created by MarkiiimarK on 12/4/16.
  */
-import com.markiiimark.daggertutorial.models.GithubRepo;
-import com.markiiimark.daggertutorial.models.GithubUser;
+import com.infoskillstechnology.daggar2tutorial.models.GithubRepo;
+import com.infoskillstechnology.daggar2tutorial.models.GithubUser;
 
 import java.util.List;
 

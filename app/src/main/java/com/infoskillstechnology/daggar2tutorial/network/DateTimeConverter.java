@@ -1,4 +1,4 @@
-package com.markiiimark.daggertutorial.network;
+package com.infoskillstechnology.daggar2tutorial.network;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
@@ -16,7 +16,7 @@ import org.joda.time.format.ISODateTimeFormat;
 import java.lang.reflect.Type;
 
 /**
- * Created by MarkiiimarK on 12/4/16.
+ * Created by Sonu Kumar on 25/09/2017.
  */
 
 public class DateTimeConverter implements JsonSerializer<DateTime>, JsonDeserializer<DateTime> {

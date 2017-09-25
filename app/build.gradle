@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-<<<<<<< HEAD
+apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion 26
@@ -8,17 +8,6 @@ android {
         applicationId "com.infoskillstechnology.daggar2tutorial"
         minSdkVersion 16
         targetSdkVersion 26
-=======
-apply plugin: 'com.neenbedankt.android-apt'
-
-android {
-    compileSdkVersion 24
-    buildToolsVersion "25.0.0"
-    defaultConfig {
-        applicationId "com.markiiimark.daggertutorial"
-        minSdkVersion 21
-        targetSdkVersion 24
->>>>>>> 841d660a8b9e9fdf88e1c03e7a080df0f12a8117
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -32,16 +21,12 @@ android {
 }
 
 dependencies {
-<<<<<<< HEAD
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:26.+'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
-    testCompile 'junit:junit:4.12'
-=======
-    compile 'com.android.support:appcompat-v7:24.2.1'
     testCompile 'junit:junit:4.12'
 
     // Dagger
@@ -78,5 +63,4 @@ dependencies {
 //        exclude group: 'com.android.support', module: 'support-annotations'
 //    })
 
->>>>>>> 841d660a8b9e9fdf88e1c03e7a080df0f12a8117
 }

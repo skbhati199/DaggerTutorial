@@ -1,4 +1,4 @@
-package com.markiiimark.daggertutorial.screens.home;
+package com.infoskillstechnology.daggar2tutorial.screens.home;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -7,8 +7,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.markiiimark.daggertutorial.R;
-import com.markiiimark.daggertutorial.models.GithubRepo;
+import com.infoskillstechnology.daggar2tutorial.R;
+import com.infoskillstechnology.daggar2tutorial.models.GithubRepo;
 import com.squareup.picasso.Picasso;
 
 import org.joda.time.format.DateTimeFormat;

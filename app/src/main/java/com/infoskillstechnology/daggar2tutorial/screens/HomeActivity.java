@@ -1,15 +1,15 @@
-package com.markiiimark.daggertutorial.screens;
+package com.infoskillstechnology.daggar2tutorial.screens;
 
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.Toast;
 
 
-import com.markiiimark.daggertutorial.GithubApplication;
-import com.markiiimark.daggertutorial.R;
-import com.markiiimark.daggertutorial.models.GithubRepo;
-import com.markiiimark.daggertutorial.network.GithubService;
-import com.markiiimark.daggertutorial.screens.home.AdapterRepos;
+import com.infoskillstechnology.daggar2tutorial.GithubApplication;
+import com.infoskillstechnology.daggar2tutorial.R;
+import com.infoskillstechnology.daggar2tutorial.models.GithubRepo;
+import com.infoskillstechnology.daggar2tutorial.network.GithubService;
+import com.infoskillstechnology.daggar2tutorial.screens.home.AdapterRepos;
 import com.squareup.picasso.Picasso;
 
 

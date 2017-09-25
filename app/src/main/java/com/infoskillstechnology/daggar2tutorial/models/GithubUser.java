@@ -1,4 +1,4 @@
-package com.markiiimark.daggertutorial.models;
+package com.infoskillstechnology.daggar2tutorial.models;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

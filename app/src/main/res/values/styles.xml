@@ -6,10 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-<<<<<<< HEAD
-=======
         <item name="android:windowBackground">@color/windowBackground</item>
->>>>>>> 841d660a8b9e9fdf88e1c03e7a080df0f12a8117
     </style>
 
 </resources>

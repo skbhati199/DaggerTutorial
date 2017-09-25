@@ -1,4 +1,4 @@
-package com.markiiimark.daggertutorial.screens;
+package com.infoskillstechnology.daggar2tutorial.screens;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
