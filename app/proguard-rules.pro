@@ -1,6 +1,10 @@
 # Add project specific ProGuard rules here.
 # By default, the flags in this file are appended to flags specified
+<<<<<<< HEAD
 # in C:\Users\metro\AppData\Local\Android\Sdk/tools/proguard/proguard-android.txt
+=======
+# in /Users/MarkiiimarK/Library/Android/sdk/tools/proguard/proguard-android.txt
+>>>>>>> 841d660a8b9e9fdf88e1c03e7a080df0f12a8117
 # You can edit the include path and order by changing the proguardFiles
 # directive in build.gradle.
 #
@@ -15,6 +19,7 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+<<<<<<< HEAD
 
 # Uncomment this to preserve the line number information for
 # debugging stack traces.
@@ -23,3 +28,5 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+=======
+>>>>>>> 841d660a8b9e9fdf88e1c03e7a080df0f12a8117
