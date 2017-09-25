@@ -26,9 +26,6 @@ public class GithubApplication extends Application {
 
         GithubApplicationComponent component = DaggerGithubApplicationComponent.builder()
                 .contextModule(new ContextModule(this))
-                .githubServiceModule(new GithubServiceModule())
-                .networkModule(new NetworkModule())
-                .picassoModule(new PicassoModule())
                 .build();
 
         githubService = component.getGithubService();

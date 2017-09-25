@@ -8,7 +8,7 @@ import dagger.Component;
 /**
  * Created by Skbhati on 25-09-2017.
  */
-
+@GithubApplicationScope
 @Component(modules = {GithubServiceModule.class, PicassoModule.class})
 public interface GithubApplicationComponent {
 

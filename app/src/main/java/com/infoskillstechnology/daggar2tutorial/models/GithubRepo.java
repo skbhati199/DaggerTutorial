@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName;
 
 import org.joda.time.DateTime;
 /**
- * Created by MarkiiimarK on 12/4/16.
+ * Created by Sonu Kumar on 12/4/16.
  */
 
 public class GithubRepo {

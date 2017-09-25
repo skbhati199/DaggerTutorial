@@ -20,33 +20,38 @@ public class NetworkModule {
 
 
     @Provides
-    HttpLoggingInterceptor httpLoggingInterceptor(){
-        return new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
+    @GithubApplicationScope
+    HttpLoggingInterceptor httpLoggingInterceptor() {
+        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor(new HttpLoggingInterceptor.Logger() {
             @Override
             public void log(String message) {
                 Timber.i(message);
             }
         });
+        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BASIC);
+        return httpLoggingInterceptor;
     }
 
     @Provides
-    public Cache cache(File cacheFile){
+    @GithubApplicationScope
+    public Cache cache(File cacheFile) {
         return new Cache(cacheFile, 10 * 1024 * 1024); //10 MB
     }
 
     @Provides
-    public File file(Context context){
+    @GithubApplicationScope
+    public File file(Context context) {
         return new File(context.getCacheDir(), "okhttp_cache");
     }
 
     @Provides
+    @GithubApplicationScope
     public OkHttpClient okHttpClient(HttpLoggingInterceptor httpLoggingInterceptor, Cache cache) {
         return new OkHttpClient.Builder()
                 .addInterceptor(httpLoggingInterceptor)
                 .cache(cache)
                 .build();
     }
-
 
 
 }
