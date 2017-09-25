@@ -9,9 +9,10 @@ import com.infoskillstechnology.daggar2tutorial.R;
 import com.infoskillstechnology.daggar2tutorial.models.GithubRepo;
 import com.infoskillstechnology.daggar2tutorial.network.GithubService;
 import com.infoskillstechnology.daggar2tutorial.screens.home.AdapterRepos;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
+
+import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,10 +31,10 @@ public class HomeActivity extends LifecycleLogginActivity {
 
     Call<List<GithubRepo>> reposCall;
 
-    Picasso picasso;
-
+    @Inject
     GithubService githubService;
 
+    @Inject
     AdapterRepos adapterRepos;
 
     @Override
@@ -46,9 +47,7 @@ public class HomeActivity extends LifecycleLogginActivity {
                 .homeActivityModule(new HomeActivityModule(this))
                 .githubApplicationComponent(GithubApplication.get(this).component())
                 .build();
-        githubService = homeActivityComponent.githubService();
-
-        adapterRepos = homeActivityComponent.adapterRepos();
+        homeActivityComponent.injectHomeActivity(this);
         listView.setAdapter(adapterRepos);
 
         reposCall = githubService.getAllRepos();
@@ -73,5 +72,6 @@ public class HomeActivity extends LifecycleLogginActivity {
             reposCall.cancel();
         }
     }
+
 
 }
