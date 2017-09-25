@@ -4,14 +4,12 @@ import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.Toast;
 
-
 import com.infoskillstechnology.daggar2tutorial.GithubApplication;
 import com.infoskillstechnology.daggar2tutorial.R;
 import com.infoskillstechnology.daggar2tutorial.models.GithubRepo;
 import com.infoskillstechnology.daggar2tutorial.network.GithubService;
 import com.infoskillstechnology.daggar2tutorial.screens.home.AdapterRepos;
 import com.squareup.picasso.Picasso;
-
 
 import java.util.List;
 
@@ -44,10 +42,13 @@ public class HomeActivity extends LifecycleLogginActivity {
         setContentView(R.layout.activity_home);
         ButterKnife.bind(this);
 
-        githubService = GithubApplication.get(this).getGithubService();
-        picasso = GithubApplication.get(this).getPicasso();
+        HomeActivityComponent homeActivityComponent = DaggerHomeActivityComponent.builder()
+                .homeActivityModule(new HomeActivityModule(this))
+                .githubApplicationComponent(GithubApplication.get(this).component())
+                .build();
+        githubService = homeActivityComponent.githubService();
 
-        adapterRepos = new AdapterRepos(this, picasso);
+        adapterRepos = homeActivityComponent.adapterRepos();
         listView.setAdapter(adapterRepos);
 
         reposCall = githubService.getAllRepos();
@@ -68,7 +69,9 @@ public class HomeActivity extends LifecycleLogginActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        if(reposCall != null) {  reposCall.cancel();  }
+        if (reposCall != null) {
+            reposCall.cancel();
+        }
     }
 
 }

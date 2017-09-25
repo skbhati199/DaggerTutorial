@@ -11,6 +11,8 @@ import timber.log.Timber;
 
 public class GithubApplication extends Application {
 
+    private GithubApplicationComponent component;
+
     public static GithubApplication get(Activity activity) {
         return (GithubApplication) activity.getApplication();
     }
@@ -24,20 +26,17 @@ public class GithubApplication extends Application {
         // Instantiate Timber logger
         Timber.plant(new Timber.DebugTree());
 
-        GithubApplicationComponent component = DaggerGithubApplicationComponent.builder()
+        component = DaggerGithubApplicationComponent.builder()
                 .contextModule(new ContextModule(this))
                 .build();
 
-        githubService = component.getGithubService();
-        picasso = component.getPicasso();
+
 
     }
 
-    public GithubService getGithubService() {
-        return githubService;
+    public GithubApplicationComponent component(){
+        return component;
     }
 
-    public Picasso getPicasso() {
-        return picasso;
-    }
+
 }
